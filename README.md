@@ -1,1 +1,2 @@
-# Womens-Diary-Diploma
+# Women-Diary-Diploma
+Diploma project
