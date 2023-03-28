@@ -1,0 +1,42 @@
+version: '3.3'
+
+services:
+  db:
+    image: postgres
+    container_name: womens-diary-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: womens-diary
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+  django:
+    build:
+      context: .
+      dockerfile: docker/BackendDockerfile
+    container_name: womens-diary-backend
+    command: ./docker/backend_setup.sh
+    environment:
+      POSTGRES_NAME: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_HOST: localhost
+    volumes:
+      - .:/backend/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  vue:
+    build:
+      context: .
+      dockerfile: docker/FrontendDockerfile
+    container_name: womens-diary-frontend
+    command: ./docker/frontend_setup.sh
+    volumes:
+      - .:/frontend/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - django
