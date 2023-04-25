@@ -1,0 +1,59 @@
+<!doctype html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'main/css/signin.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Women's Diary - Sign In</title>
+</head>
+<body>
+    <header>
+        {% include 'main/header.html' %}
+    </header>
+
+    <section>
+        <div class="section_container">
+
+            <div class="signin_main_block">
+                <div class="signin_block_account_container">
+                    <h1>Sign in</h1>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <label>
+                            <input type="text" name="fullname" placeholder="Name Surname" >
+                        </label><br>
+                        <label>
+                            <input type="email" name="email" placeholder="Enter your email address" >
+                        </label><br>
+                        <label>
+                            <input type="password" name="password" placeholder="Password" >
+                        </label><br>
+
+                        <button type="submit">Sign in</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="main_maket_block_section_container" style="background-image: url({% static 'main/img/homepage.png' %})">
+                <div class="wrapper">
+                    <div class="title_main_maket_block">
+                        <h1>Greatness is within us</h1>
+                        <p>Knowledge and self love</p>
+                        <a href="{% url 'home' %}" class="join_us_title_main_maket">Join us</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        {% include 'main/footer.html' %}
+    </footer>
+
+</body>
+</html>

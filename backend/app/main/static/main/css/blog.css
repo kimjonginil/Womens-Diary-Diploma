@@ -1,0 +1,124 @@
+.background_section_block {
+    height: 200px;
+    background-color: #A46A90;
+}
+
+.main_maket_create_post_block {
+    margin-top: -120px;
+    width: calc(100% - 500px);
+    position: absolute;
+    background-color: #FFF;
+    box-shadow: 0 11px 60px rgba(0, 0, 0, 0.25);
+    padding: 40px 100px;
+}
+
+.main_service_maket_create_post_block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title_main_service h1 {
+    color: #949494;
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 101px;
+    text-transform: uppercase;
+}
+
+.title_main_service a {
+    color: #FFF;
+    cursor: pointer;
+    background-color: #A46A90;
+    padding: 10px 30px;
+
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 38px;
+    text-transform: uppercase;
+}
+
+.form_create_post_block {
+    padding: 200px 0 100px 0;
+}
+
+.form_create_post_block form label p {
+    margin-top: 40px;
+}
+
+.form_create_post_block form label p {
+    color: #949494;
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 50px;
+}
+
+.article_form_input_text {
+    width: calc(100% - 36px);
+    background-color: #FFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    border: none;
+    padding: 18px;
+}
+
+.article_form_input_text:focus {
+    outline: none;
+    border: none;
+}
+
+.article_form_input_image_file::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.article_form_input_image_file::before {
+    content: 'Choose file';
+    display: inline-block;
+    color: #FFF;
+    background-color: #C6DBD2;
+    padding: 10px 30px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 38px;
+    text-transform: uppercase;
+}
+
+.error_message {
+    color: #000;
+    margin: 40px 0 30px 0;
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 38px;
+}
+
+.form_create_post_block form button {
+    cursor: pointer;
+    padding: 10px 30px;
+    background-color: #A46A90;
+    border: none;
+
+    color: #FFF;
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 38px;
+    text-transform: uppercase;
+}

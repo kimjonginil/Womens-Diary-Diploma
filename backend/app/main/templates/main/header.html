@@ -1,0 +1,56 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'main/css/header.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <header>
+        <div class="header_container">
+            <div class="header_main_logo_block">
+                <a href="{% url 'home' %}">
+                    <div class="avatar_logo" style="background-image: url({% static 'main/img/avatar.png' %})"></div>
+                </a>
+                <a href="{% url 'home' %}">
+                    <div class="name_logo" style="background-image: url({% static 'main/img/logo.png' %})"></div>
+                </a>
+            </div>
+            <div class="header_main_list_block">
+                <ul class="list_categories_block">
+                    <li class="list">
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="list">
+                        <a href="{% url 'articles' %}">Articles</a>
+                    </li>
+                    <li class="list">
+                        <a href="{% url 'blog' %}">Blog</a>
+                    </li>
+                    <li class="list">
+                        <a href="{% url 'tests' %}">Tests</a>
+                    </li>
+                </ul>
+                <ul class="list_account_block">
+                    {% if user.is_authenticated %}
+                        <li class="list_account_auth">
+                            <a href="{% url 'sign-out' %}" style="color: #FFF;">{{ user.username }}</a>
+                        </li>
+                    {% else %}
+                        <li class="list_account_auth">
+                            <a href="{% url 'sign-in' %}" style="color: #FFF;">Sign in</a>
+                        </li>
+                    {% endif %}
+                    <li class="list_account_change_language">
+                        <img src="{% static 'main/img/english_version.png' %}" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

@@ -1,0 +1,174 @@
+.section_container {
+    padding: 0 260px;
+}
+
+.main_article_data {
+    display: flex;
+    flex-direction: column;
+}
+
+.title_main_article_data {
+    margin-top: 45px;
+}
+
+.title_main_article_data h1 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 101px;
+    text-transform: uppercase;
+}
+
+.author_date_main_article_data {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.author_date_main_article_data p {
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 38px;
+}
+
+.summary_main_article_data {
+    margin: 15px 0;
+}
+
+.summary_main_article_data h2 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 50px;
+}
+
+.image_main_article_data img {
+    width: 100%;
+}
+
+.description_main_article_data {
+    margin-top: 15px;
+}
+
+.description_main_article_data p {
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 50px;
+}
+
+.main_article_discussion_container {
+    margin: 75px 0;
+}
+
+.title_main_article_discussion_block h1 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 57px;
+    text-transform: uppercase;
+    margin-bottom: -30px;
+}
+
+.article_discussion_data_block {
+    display: flex;
+    flex-direction: column;
+}
+
+.article_discussion_block {
+    width: 100%;
+    margin-top: 40px;
+    padding: 8px 18px;
+    background-color: #FFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.article_discussion_block h1 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 38px;
+}
+
+.article_discussion_block p {
+    margin-top: 7px;
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 31px;
+}
+
+.title_write_comment h1 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 57px;
+    text-transform: uppercase;
+}
+
+.empty_discussion_data h1 {
+    margin: 30px 0 -40px 0;
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 37px;
+    text-transform: uppercase;
+}
+
+.write_article_discussion_data {
+    padding-bottom: 75px;
+}
+
+.write_article_discussion_data p {
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 31px;
+}
+
+.write_article_discussion_data form {
+    width: 100%;
+}
+
+.write_article_discussion_data form textarea {
+    padding: 18px;
+    margin: 10px 0 30px 0;
+    width: 100%;
+    border: none;
+    background-color: #FFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.write_article_discussion_data form textarea:focus {
+    outline: none;
+    border: none;
+}
+
+.write_article_discussion_data form button {
+    cursor: pointer;
+    border: none;
+    background-color: #A46A90;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 30px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    color: #FFF;
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 38px;
+    text-transform: uppercase;
+}

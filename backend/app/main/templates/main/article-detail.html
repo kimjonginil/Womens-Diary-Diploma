@@ -1,0 +1,83 @@
+<!doctype html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'main/css/article-detail.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Women's Diary - {{ article.title }}</title>
+</head>
+<body>
+
+    <header>
+        {% include 'main/header.html' %}
+    </header>
+
+    <section>
+        <div class="section_container">
+            <div class="main_article_data">
+                <div class="title_main_article_data">
+                    <h1>{{ article.title }}</h1>
+                </div>
+                <div class="author_date_main_article_data">
+                    <p>By {{ article.author.fullname }}, {{ article.formatted_date }}</p>
+                </div>
+                <div class="summary_main_article_data">
+                    <h2>{{ article.summary }}</h2>
+                </div>
+                <div class="image_main_article_data">
+                    <img src="{{ article.image.url }}" alt="">
+                </div>
+                <div class="description_main_article_data">
+                    <p>{{ article.description }}</p>
+                </div>
+            </div>
+
+            <div class="main_article_discussion_container">
+                <div class="title_main_article_discussion_block">
+                    <h1>Discussion</h1>
+                </div>
+                <div class="article_discussion_data_block">
+                    {% if discussions %}
+                        {% for discussion in discussions %}
+                            <div class="article_discussion_block">
+                                <h1>{{ discussion.author.fullname }}</h1>
+                                <p>{{ discussion.comment }}</p>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="empty_discussion_data">
+                            <h1>Comments haven't been created yet!</h1>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% if user.is_authenticated %}
+                <div class="write_article_discussion_data">
+                    <div class="title_write_comment">
+                        <h1>leave your comment</h1>
+                    </div>
+                    <p>Comment <span>*</span></p>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <label>
+                            <textarea name="comment" cols="30" rows="10"></textarea>
+                        </label>
+                        <button type="submit">post comment</button>
+                    </form>
+                </div>
+            {% endif %}
+
+        </div>
+    </section>
+
+    <footer>
+        {% include 'main/footer.html' %}
+    </footer>
+
+</body>
+</html>
