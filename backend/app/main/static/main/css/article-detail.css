@@ -82,13 +82,15 @@
 
 .article_discussion_block {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
     margin-top: 40px;
     padding: 8px 18px;
     background-color: #FFF;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
-.article_discussion_block h1 {
+.main_info_block_article_discussion_block h1 {
     font-family: 'Saira Condensed', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -96,7 +98,7 @@
     line-height: 38px;
 }
 
-.article_discussion_block p {
+.main_info_block_article_discussion_block p {
     margin-top: 7px;
     font-family: 'Saira Condensed', sans-serif;
     font-style: normal;
@@ -142,7 +144,7 @@
 
 .write_article_discussion_data form textarea {
     padding: 18px;
-    margin: 10px 0 30px 0;
+    margin-top: 10px;
     width: 100%;
     border: none;
     background-color: #FFF;
@@ -155,6 +157,7 @@
 }
 
 .write_article_discussion_data form button {
+    margin-top: 30px;
     cursor: pointer;
     border: none;
     background-color: #A46A90;
@@ -171,4 +174,42 @@
     font-size: 24px;
     line-height: 38px;
     text-transform: uppercase;
+}
+
+.anonymous_label input {
+    margin-top: 30px;
+}
+
+.anonymous_label span {
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 38px;
+    text-transform: uppercase;
+}
+
+.like_block_article_discussion_block {
+    display: flex;
+    align-items: flex-end;
+}
+
+.main_base_article_discussion_block {
+    display: flex;
+    align-items: center;
+}
+
+.main_base_article_discussion_block form button {
+    cursor: pointer;
+    margin-left: 10px;
+    background-color: #FFF;
+    border: none;
+}
+
+.complained_message_style {
+    font-family: 'Saira Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 38px;
 }

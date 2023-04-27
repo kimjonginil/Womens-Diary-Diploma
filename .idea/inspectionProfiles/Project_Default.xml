@@ -43,6 +43,11 @@
           <option value="article.models.Article.objects" />
           <option value="article.models.Discussion.*" />
           <option value="tests.models.Tests.objects" />
+          <option value="article.models.ArticleAdmin.objects" />
+          <option value="tests.models.DiaryEntry.*" />
+          <option value="tests.models.QuizResult.*" />
+          <option value="tests.models.QuizOption.*" />
+          <option value="tests.models.QuizQuestion.*" />
         </list>
       </option>
     </inspection_tool>

@@ -1,0 +1,80 @@
+<!doctype html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'tests/css/quiz.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Women's Diary - {{ test.title }}</title>
+</head>
+<body>
+
+    <header>
+        {% include 'main/header.html' %}
+    </header>
+
+    <section>
+        <div class="section_container">
+            <div class="main_test_quiz_container">
+                <div class="title_main_test_quiz_block">
+                    <h1>Test: {{ test.title }}</h1>
+                </div>
+                <div class="question_main_test_quiz_block">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {% for question in questions %}
+                            <div class="number_statement_question_block">
+                                <div class="number_of_question_circle_block">
+                                    <p>2{{ option.id }}</p>
+                                </div>
+                                <div class="background_range_question_block">
+                                    <div class="range_question_value_block" style="width: calc((100% / {{ question.quizoption_set.count }}) * 2 );"></div>
+                                </div>
+                                <div class="completed_number_of_question_block">
+                                    <p>2{{ option.id }}/{{ question.quizoption_set.count }}</p>
+                                </div>
+                            </div>
+                            <div class="title_question_block">
+                                <h1>{{ question.text }}</h1>
+                            </div>
+                            {% for option in question.quizoption_set.all %}
+                                <div class="options_question_block">
+                                    <input type="radio" id="option_{{ option.id }}" name="{{ question.id }}" value="{{ option.id }}" required>
+                                    <label for="option_{{ option.id }}">{{ option.text }}</label>
+                                </div>
+                            {% endfor %}
+                            <div class="next_prev_question_block">
+                                <span class="next_question_block">Next</span>
+                            </div>
+                        {% endfor %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        {% include 'main/footer.html' %}
+    </footer>
+
+<!--    <form method="post">-->
+<!--        {% csrf_token %}-->
+<!--        {% for question in questions %}-->
+<!--            <div class="question">-->
+<!--                <h2>{{ question.text }}</h2>-->
+<!--                {% for option in question.quizoption_set.all %}-->
+<!--                    <div class="option">-->
+<!--                        <input type="radio" id="option_{{ option.id }}" name="{{ question.id }}" value="{{ option.id }}" required>-->
+<!--                        <label for="option_{{ option.id }}">{{ option.text }}</label>-->
+<!--                    </div>-->
+<!--                {% endfor %}-->
+<!--            </div>-->
+<!--        {% endfor %}-->
+<!--        <button type="submit">Submit</button>-->
+<!--    </form>-->
+
+</body>
+</html>

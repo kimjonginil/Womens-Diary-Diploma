@@ -25,7 +25,7 @@
                 <div class="main_info_block_test_data">
                     <h1>{{ test.title }}</h1>
                     <p>{{ test.description }}</p>
-                    <a href="">Pass the test</a>
+                    <a href="{% url 'quiz' test.id %}">Pass the test</a>
                 </div>
             </div>
         </div>

@@ -38,7 +38,7 @@
                 <ul class="list_account_block">
                     {% if user.is_authenticated %}
                         <li class="list_account_auth">
-                            <a href="{% url 'sign-out' %}" style="color: #FFF;">{{ user.username }}</a>
+                            <a href="{% url 'sign-out' %}" style="color: #FFF;">{{ user.email }}</a>
                         </li>
                     {% else %}
                         <li class="list_account_auth">

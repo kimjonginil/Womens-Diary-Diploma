@@ -156,3 +156,15 @@ LANGUAGES = (
 LOCALE_PATHS = (
     os.path.join(BASE_DIR / 'locale'),
 )
+
+
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_PASSWORD = 'wbysfpzwmraggfmy'  # womensdiarysdu2023
+EMAIL_HOST_USER = 'womenssdiary@gmail.com'
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
