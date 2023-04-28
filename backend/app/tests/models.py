@@ -1,3 +1,4 @@
+from django.contrib.postgres.fields import ranges
 from django.db import models
 
 from account.models import User
@@ -60,3 +61,17 @@ class QuizResult(models.Model):
         db_table = 'QuizResult'
         verbose_name = 'Quiz Result'
         verbose_name_plural = 'Quiz Results'
+
+
+class QuizResultText(models.Model):
+    test = models.ForeignKey(Tests, on_delete=models.CASCADE)
+    text = models.TextField()
+    score = ranges.IntegerRangeField()
+
+    def __str__(self):
+        return f'Test: {self.test} <---> Score Range: {self.score}'
+
+    class Meta:
+        db_table = 'QuizResultText'
+        verbose_name = 'Quiz Result Text'
+        verbose_name_plural = 'Quiz Result Texts'

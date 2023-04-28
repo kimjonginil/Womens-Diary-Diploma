@@ -75,7 +75,10 @@
     background: #C6DBD2;
 }
 
-.completed_number_of_question_block p {
+.completed_number_of_question_block span {
+    display: flex;
+    align-items: center;
+
     font-family: 'Saira Condensed', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -121,7 +124,7 @@
     padding: 15px 0 60px 0;
 }
 
-.next_prev_question_block span {
+.next_question_block {
     cursor: pointer;
     background-color: #A46A90;
     border: none;
@@ -137,6 +140,6 @@
     transition: all 0.3s ease;
 }
 
-.next_prev_question_block span:hover {
+.next_question_block:hover {
     opacity: 0.8;
 }

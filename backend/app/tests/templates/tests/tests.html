@@ -25,6 +25,12 @@
                         <p>tests for you</p>
                     </div>
                 </div>
+                {% for message in messages %}
+                    <div class="successfully_test_completed_block">
+                        <h1>{{ message }}</h1>
+                        <span id="ok">Ok</span>
+                    </div>
+                {% endfor %}
             </div>
 
             <div class="wrapper">
@@ -49,6 +55,12 @@
     <footer>
         {% include 'main/footer.html' %}
     </footer>
+
+    <script>
+        document.getElementById('ok').addEventListener('click', () => {
+            document.querySelector('.successfully_test_completed_block').style.display = 'none';
+        })
+    </script>
 
 </body>
 </html>

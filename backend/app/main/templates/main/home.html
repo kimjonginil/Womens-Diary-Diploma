@@ -19,12 +19,18 @@
     <section>
         <div class="section_container">
 
-            <div class="main_maket_block_section_container" style="background-image: url({% static 'main/img/homepage.png' %})">
+            <div class="main_maket_block_section_container">
+                <div class="mySlides background_image_main_maket_block slide">
+                    <img src="{% static 'main/img/homepage.png' %}" alt="">
+                </div>
+                <div class="mySlides background_image_main_maket_block slide">
+                    <img src="{% static 'main/img/homepage2.png' %}" alt="">
+                </div>
                 <div class="wrapper">
                     <div class="title_main_maket_block">
                         <h1>Greatness is within us</h1>
                         <p>Knowledge and self love</p>
-                        <a href="{% url 'home' %}" class="join_us_title_main_maket">{% translate 'hello' %}</a>
+                        <a href="{% url 'sign-in' %}" class="join_us_title_main_maket">JOIN US</a>
                     </div>
                 </div>
             </div>
@@ -98,6 +104,25 @@
     <footer>
         {% include 'main/footer.html' %}
     </footer>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.add("hidden");
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            slides[slideIndex - 1].classList.remove("hidden");
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+    </script>
 
 </body>
 </html>
