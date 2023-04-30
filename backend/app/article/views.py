@@ -5,10 +5,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.template.loader import render_to_string
 from django.urls import reverse
 
-from datetime import timedelta
-from django.utils import timezone
-from .tasks import send_warning_email
-
 from article.models import ArticleAdmin, Article, Discussion
 
 

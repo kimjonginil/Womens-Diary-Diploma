@@ -20,10 +20,10 @@
         <div class="section_container">
 
             <div class="main_maket_block_section_container">
-                <div class="mySlides background_image_main_maket_block slide">
+                <div class="mySlides background_image_main_maket_block active">
                     <img src="{% static 'main/img/homepage.png' %}" alt="">
                 </div>
-                <div class="mySlides background_image_main_maket_block slide">
+                <div class="mySlides background_image_main_maket_block">
                     <img src="{% static 'main/img/homepage2.png' %}" alt="">
                 </div>
                 <div class="wrapper">
@@ -105,22 +105,17 @@
     </footer>
 
     <script>
-        var slideIndex = 0;
-        showSlides();
 
-        function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].classList.add("hidden");
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1
-            }
-            slides[slideIndex - 1].classList.remove("hidden");
-            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        let slides = document.querySelectorAll('.mySlides');
+        let currentSlide = 0;
+        let slideInterval = setInterval(nextSlide, 5000);
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
         }
+
     </script>
 
 </body>

@@ -12,8 +12,6 @@ def SignIn(request):
 
         if User.objects.filter(email=email).exists():
             user = authenticate(email=email, password=password)
-            print(user)
-            print(email, password)
             if user is not None:
                 login(request, user)
                 return redirect('/')
