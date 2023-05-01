@@ -32,7 +32,7 @@
                     <img src="{{ article.image.url }}" alt="">
                 </div>
                 <div class="description_main_article_data">
-                    <p>{{ article.description }}</p>
+                    <p>{{ article.description|safe }}</p>
                 </div>
             </div>
 

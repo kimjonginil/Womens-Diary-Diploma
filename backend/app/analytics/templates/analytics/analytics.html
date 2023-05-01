@@ -1,17 +1,14 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Analytics</title>
+    <title>Women's Diary - Analytical tool</title>
 </head>
 <body>
-
-    <h1>Analytics</h1>
-    <p>Average visit duration per user per day: {{ average_visit_duration }}</p>
-    <p>Average number of articles created per user per day: {{ average_articles_count }}</p>
-
+    <img src="{% static 'analytics/images/plot/discussion_like_dislike.png' %}" width="500px" alt="" style="color: #000;">
 </body>
 </html>

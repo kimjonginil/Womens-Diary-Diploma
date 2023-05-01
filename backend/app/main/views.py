@@ -1,12 +1,8 @@
 from django.shortcuts import render
 from article.models import Article
 
-from django.utils.translation import gettext as _
-from django.utils.translation import get_language, activate, gettext
-
 
 def HomePage(request):
-    trans = translate(language='ru')
     
     articles = Article.objects.all().order_by('-created_date')[:3]
     first_article = None
@@ -23,18 +19,7 @@ def HomePage(request):
     context = {
         'first_article': first_article,
         'second_article': second_article,
-        'third_article': third_article,
-        'trans': trans
+        'third_article': third_article
     }
 
     return render(request, 'main/home.html', context)
-
-
-def translate(language):
-    cur_language = get_language()
-    try:
-        activate(language)
-        text = gettext('hello')
-    finally:
-        activate(cur_language)
-    return text

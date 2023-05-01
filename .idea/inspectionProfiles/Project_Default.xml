@@ -48,6 +48,7 @@
           <option value="tests.models.QuizResult.*" />
           <option value="tests.models.QuizOption.*" />
           <option value="tests.models.QuizQuestion.*" />
+          <option value="analytics.models.DiscussionLikesDislikes.*" />
         </list>
       </option>
     </inspection_tool>

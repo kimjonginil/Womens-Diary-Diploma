@@ -50,7 +50,7 @@ def Quiz(request, pk):
                 score += selected_option.score
             else:
                 score += selected_option.score
-        result = QuizResult.objects.create(user=request.user, score=score, test=Tests.objects.get(id=1))
+        result = QuizResult.objects.create(user=request.user, score=score, test=Tests.objects.get(id=pk))
 
         ResultText(test_id=pk, score=score, user=request.user)
 

@@ -14,11 +14,11 @@ function nextQuestion(currentQuestionId) {
     }
 
     const listQuestions = [
-        {% for q in questions %}
-            {
-                questionId: 'question{{ q.id }}'
-            },
-        {% endfor %}
+        // {% for q in questions %}
+        //     {
+        //         questionId: 'question{{ q.id }}'
+        //     },
+        // {% endfor %}
     ]
 
     for (let i = 0; i < listQuestions.length; i++) {

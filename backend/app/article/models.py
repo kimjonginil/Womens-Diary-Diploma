@@ -1,5 +1,6 @@
 from django.db import models
 from account.models import User
+from ckeditor.fields import RichTextField
 
 
 class ArticleAdmin(models.Model):
@@ -7,7 +8,7 @@ class ArticleAdmin(models.Model):
     image = models.ImageField(upload_to='images/articles/', null=True, blank=True)
     title = models.CharField(max_length=255, null=True, blank=True)
     summary = models.TextField()
-    description = models.TextField()
+    description = RichTextField()
     created_date = models.DateTimeField(auto_now_add=True)
     image_url = models.URLField(null=True, blank=True)
 
@@ -27,7 +28,7 @@ class Article(models.Model):
     image = models.ImageField(upload_to='images/articles/', null=True, blank=True)
     title = models.CharField(max_length=255, null=True, blank=True)
     summary = models.TextField()
-    description = models.TextField()
+    description = RichTextField()
     created_date = models.DateTimeField(auto_now_add=True)
     image_url = models.URLField(null=True, blank=True)
 
